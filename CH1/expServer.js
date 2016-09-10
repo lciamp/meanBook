@@ -1,11 +1,11 @@
 // load express package and creat our app
-var express = require('express');
-var app     = express();
-var path    = require('path');
+var express = require('express'),
+  app = express(),
+  path = require('path');
 
 // send our index.html file to the user for the home page
 app.get('/', function(req, res){
-    res.sendFile(path.join(__dirname + '/index.html'));
+  res.sendFile(path.join(__dirname + '/index.html'));
 });
 
 // start the server
