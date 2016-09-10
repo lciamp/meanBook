@@ -11,6 +11,7 @@ http.createServer(function(req, res) {
     'Access-Control-Allow-Orogon' : '*'
   });
 
+
   // grab the index.html file using fs
   var readStream = fs.createReadStream(__dirname + '/index.html');
 
