@@ -29,6 +29,7 @@ adminRouter.get('/posts', function(req, res){
   res.send('I show all the posts');
 });
 
+// add router to the app
 app.use('/admin', adminRouter);
 // start the server
 app.listen(1337);
