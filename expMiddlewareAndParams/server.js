@@ -9,12 +9,10 @@ app.get('/', function(req, res){
   res.sendFile(path.join(__dirname + '/index.html'));
 });
 
-
 // create routes for admin section
 
 // get an instance of the router
 var adminRouter = express.Router();
-
 // route middlewear that will happen on every request
 adminRouter.use(function(req, res, next){
 
