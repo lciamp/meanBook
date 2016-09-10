@@ -12,7 +12,7 @@ http.createServer(function(req, res) {
   });
 
 
-  // grab the index.html file using fs
+  // grab the index.html file using fs module
   var readStream = fs.createReadStream(__dirname + '/index.html');
 
   // send the index.html file to our user
