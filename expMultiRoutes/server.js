@@ -38,14 +38,17 @@ adminRouter.use(function(req, res, next){
 });
 
 // admin main page. the dashboard 1337/admin
-adminRouter.get('/', function(req, res){
+adminRouter
+  .get('/', function(req, res){
     res.send('I am the admin log in');
-  }).post('/', function(req, res){
+  })
+  .post('/', function(req, res){
     res.send('I am processing the admin login')
   });
 
 // route middlewear to validate :name
 adminRouter.param('name', function(req, res, next, name){
+
   // do validation here
   // validation
   // log something so we know its working
@@ -57,6 +60,10 @@ adminRouter.param('name', function(req, res, next, name){
   // go to the next thing
   next();
 
+});
+
+adminRouter.get('/users', function(req, res){
+  res.send('I show all the users!');
 });
 
 // user page 1337/admin/users  *** WITH PARAMATERS
