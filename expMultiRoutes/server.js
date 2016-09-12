@@ -38,11 +38,17 @@ adminRouter.use(function(req, res, next){
 });
 
 // admin main page. the dashboard 1337/admin
+<<<<<<< HEAD
 adminRouter
   .get('/', function(req, res){
     res.send('I am the admin log in');
   })
   .post('/', function(req, res){
+=======
+adminRouter.get('/', function(req, res){
+    res.send('I am the admin log in');
+  }).post('/', function(req, res){
+>>>>>>> 09d9016777846051ae42259613b014144c0b932e
     res.send('I am processing the admin login')
   });
 
