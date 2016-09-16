@@ -9,12 +9,16 @@ var morgan = require('morgan'); // used to see requests
 var mongoose = require('mongoose'); // used to connect with mongoDB
 var port = process.env.PORT || 8080; // set the port for our app
 
+// connect to our database
+mongoose.connect('mongodb://localhost:27017/mean-dev');
+
 // APP CONFIGURATION ----------------------------------------------------------
 // use body-parser so we can grab information from POST requests
 app.use(bodyParser.urlencoded({ extended : true}));
 app.use(bodyParser.json());
 
 // configure our app to handle CORS requests
+// allows any domain to access our API
 app.use(function(req, res, next){
   res.setHeader('Access-Control-Allow-Orgin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
