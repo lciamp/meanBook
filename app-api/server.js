@@ -14,7 +14,7 @@ mongoose.connect('mongodb://localhost:27017/mean-dev');
 
 // APP CONFIGURATION ----------------------------------------------------------
 // use body-parser so we can grab information from POST requests
-app.use(bodyParser.urlencoded({ extended : true}));
+app.use(bodyParser.urlencoded({ extended : true }));
 app.use(bodyParser.json());
 
 // configure our app to handle CORS requests
@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 app.use(function(req, res, next){
   res.setHeader('Access-Control-Allow-Orgin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
-  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, \
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type,\
     Authorization');
   next();
 });
