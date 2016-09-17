@@ -19,9 +19,10 @@ UserSchema.pre('save', function(next){
 
   // generate the hash
   bcrypt.hash(user.password, null, null, function(err, hash){
+    // check for error
     if(err) return next(err);
 
-    // chnage the password to the hashed version
+    // change the password to the hashed version
     user.password = hash;
     next();
   });
