@@ -50,7 +50,7 @@ apiRouter.get('/', function(req, res){
 // more routes for our api will go here
 
 // REGISTER OUR ROUTES --------------------------------------------------------
-// all routes will be prefixed with /api
+// all routes that will be prefixed with /api
 app.use('/api', apiRouter);
 
 // START THE SERVER
