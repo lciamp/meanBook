@@ -2,12 +2,12 @@
 // ============================================================================
 
 // CALL THE PACKAGES ----------------------------------------------------------
-var express = require('express'); // call express
-var app = express(); // define our app using express
-var bodyParser = require('body-parser'); // get body-parser
-var morgan = require('morgan'); // used to see requests
-var mongoose = require('mongoose'); // used to connect with mongoDB
-var port = process.env.PORT || 8080; // set the port for our app
+var express = require('express'), // call express
+    app = express(), // define our app using express
+    bodyParser = require('body-parser'), // get body-parser
+    morgan = require('morgan'), // used to see requests
+    mongoose = require('mongoose'), // used to connect with mongoDB
+    port = process.env.PORT || 8080; // set the port for our app
 
 // connect to our database
 mongoose.connect('mongodb://localhost:27017/mean-dev');
