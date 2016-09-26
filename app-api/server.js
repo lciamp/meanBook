@@ -9,6 +9,10 @@ var express = require('express'), // call express
     mongoose = require('mongoose'), // used to connect with mongoDB
     port = process.env.PORT || 8080; // set the port for our app
 
+// set some local variables
+app.locals.title = "Lou's app";
+app.locals.email = "lou@lou.com";
+
 // connect to our database
 mongoose.connect('mongodb://localhost:27017/mean-dev');
 
