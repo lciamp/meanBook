@@ -1,3 +1,4 @@
+// server.js
 // BASE SETUP
 // ============================================================================
 
@@ -7,14 +8,17 @@ var express = require('express'), // call express
     bodyParser = require('body-parser'), // get body-parser
     morgan = require('morgan'), // used to see requests
     mongoose = require('mongoose'), // used to connect with mongoDB
-    port = process.env.PORT || 8080; // set the port for our app
+    port = process.env.PORT || 8080, // set the port for our app
+    User = require('./app-api/models/user'); // import user model
 
 // set some local variables
 app.locals.title = "Lou's app";
 app.locals.email = "lou@lou.com";
 
-// connect to our database
-mongoose.connect('mongodb://localhost:27017/mean-dev');
+// connect to our database & check for connection error
+mongoose.connect('mongodb://localhost:27017/mean-dev', function(err){
+  if(err) throw err;
+});
 
 // APP CONFIGURATION ----------------------------------------------------------
 // use body-parser so we can grab information from POST requests
@@ -45,11 +49,21 @@ app.get('/', function(req, res){
 // get an instance of the express router
 var apiRouter = express.Router();
 
+// middelware for all requests
+apiRouter.use(function(req, res, next){
+  // do logging
+  console.log('Somone just came to our app!');
+
+  next();
+});
+
 // test route to make sure everything is working
 // accessed at GET http://localhost:8080/api
 apiRouter.get('/', function(req, res){
   res.json({message : 'hooray! welcome to our api!'});
 });
+
+
 
 // more routes for our api will go here
 
