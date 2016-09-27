@@ -2,14 +2,17 @@
 // BASE SETUP
 // ============================================================================
 
+// IMPORT THE MODELS
+// 1 . = cd, 2 . back a dir
+var User = require('./models/user');
+
 // CALL THE PACKAGES ----------------------------------------------------------
 var express = require('express'), // call express
     app = express(), // define our app using express
     bodyParser = require('body-parser'), // get body-parser
     morgan = require('morgan'), // used to see requests
     mongoose = require('mongoose'), // used to connect with mongoDB
-    port = process.env.PORT || 8080, // set the port for our app
-    User = require('./app-api/models/user'); // import user model
+    port = process.env.PORT || 8080; // set the port for our app
 
 // set some local variables
 app.locals.title = "Lou's app";
